@@ -34,6 +34,7 @@ function s:makeDefaultBehavior()
         \   'javascript': [],
         \   'coffee'    : [],
         \   'ls'        : [],
+        \   'ocaml'     : [],
         \ }
   "---------------------------------------------------------------------------
   if !empty(g:acp_behaviorUserDefinedFunction) &&
@@ -77,6 +78,12 @@ function s:makeDefaultBehavior()
   call add(behavs.ruby, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForRubyOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
+  call add(behavs.ocaml, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForPythonOmni',
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
